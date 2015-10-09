@@ -15,12 +15,10 @@ public class LJCommonSearch extends LJContainer{
 		return this.getWebElement().findElement(By.className("search-tab")).findElement(By.className("check"));
 	}
 	
-	//ËÑË÷ÊäÈë¿ò
 	public WebElement getSearchBoxField(){
 		return this.getWebElement().findElement(By.id("keyword-box"));
 	}
 	
-	//ËÑË÷button
 	public WebElement getSearchBtn(){
 		return this.getWebElement().findElement(By.cssSelector("button[type='submit']"));
 	}		

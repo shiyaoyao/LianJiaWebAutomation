@@ -68,7 +68,6 @@
             <batchtest fork="on" todir="${report.path}" haltonfailure="no">
                 <fileset dir="${build.path}">
                     <include name="com/lianjia/lianjiaweb/authentication/*TestCase.class"/>
-                	<include name="com/lianjia/lianjiaweb/homepage/info/*TestCase.class"/>
                 </fileset>
             </batchtest>                 
          </junit>        

@@ -6,18 +6,15 @@
 
     <!-- 源代码src路径 -->
 	<property name="common.selenium.src" value="../CommonSelenium/src" />
-	<property name="src.dir" value="${basedir}/src" />
-	<property name="resources.dir" value="${basedir}/resources" />
-    
-	<!-- 单元测试代码路径 -->
-    <property name="test.path" value="${basedir}/src/com/lianjia/lianjiaweb"/>
-	
+	<property name="src.dir" value="../LianJiaWebSelenium/src" />
+	<property name="resources.dir" value="../LianJiaWebSelenium/resources" />
+    	
     <!-- 编译文件class路径 -->
-    <property name="build.path" value="${basedir}/bin"/>
+    <property name="build.path" value="../bin"/>
 	   
     <!-- lib包路径 -->
 	<property name="common.selenium.lib" value="../CommonSelenium/lib" />
-	<property name="lianjia.selenium.lib" value="${basedir}/lib" />	
+	<property name="lianjia.selenium.lib" value="../LianJiaWebSelenium/lib" />	
 	
     <!-- 生成报告junit4.xml路径 -->
     <property name="report.path" value="report"/>

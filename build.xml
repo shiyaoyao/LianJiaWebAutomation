@@ -10,7 +10,7 @@
 	<property name="resources.dir" value="LianJiaWebSelenium/resources" />
     	
     <!-- 编译文件class路径 -->
-    <property name="build.path" value="../bin"/>
+    <property name="build.path" value="bin"/>
 	   
     <!-- lib包路径 -->
 	<property name="common.selenium.lib" value="CommonSelenium/lib" />

@@ -1,0 +1,63 @@
+<!-- ***************************************************************** -->
+<!-- Confidential                                                      -->
+<!-- ***************************************************************** -->
+
+<project name="lianjia-automation/CommonSelenium" 
+         default="development" 
+         basedir=".">
+
+  <import file="${env.WPLC_IMPORT}/std_props.xml"/>
+  <import file="${env.WPLC_IMPORT}/std_dirs.xml"/>
+  <import file="${env.WPLC_IMPORT}/check.xml"/>
+  <import file="${env.WPLC_IMPORT}/rmic.xml"/>
+  <import file="${env.WPLC_IMPORT}/package_extra.xml"/>
+  <import file="${env.WPLC_IMPORT}/javadoc.xml"/>
+  <import file="${env.WPLC_IMPORT}/jdepend.xml"/>
+  <import file="${env.WPLC_IMPORT}/clean.xml"/>
+  <import file="${env.WPLC_IMPORT}/comp_zip.xml"/>
+  <import file="${env.WPLC_IMPORT}/std_targets.xml"/>
+  <import file="${env.WPLC_IMPORT}/process_nls.xml"/>
+  <import file="${env.WPLC_IMPORT}/performance.xml"/>
+
+  <property name="postpackage.override" value="packageZip"/>
+
+  <!-- Compile classes --> 
+  <target name="compile">
+    <path id="javac.class.path">
+      <fileset dir="lib">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
+	<javac debug="true" srcdir="src" destdir="${dir.build}" >
+	  <classpath refid="javac.class.path"/>
+	</javac>
+  </target>
+
+  <!-- Create Jar --> 
+  <target name="createjar">
+    <property name="jarFile" value="${dir.build}/common.selenium.jar"/>
+	<jar destfile="${jarFile}">
+	  <fileset dir="${dir.build}" casesensitive="false">
+		<include name="appobjects/**/*.class"/>
+		<include name="com/**/*.class"/>
+		<include name="tasks/**/*.class"/>
+	  </fileset>
+	  <fileset dir="src" casesensitive="false">
+		<include name="**/**/*.css"/>
+		<include name="**/**/*.html"/>
+		<include name="**/**/*.js"/>
+		<include name="**/**/*.png"/>
+		<include name="**/**/*.xml"/>
+	  </fileset>
+	</jar>
+  </target>
+
+  <target name="packageZip">
+    <property name="zip.dir" value="${dir.buildbase}/Selenium_Execution"/>
+    <zip destfile="${zip.dir}/libs.jar">
+	  <zipgroupfileset dir="lib" includes="**/*.jar" excludes="lib/sikuli-script.jar"/>
+    </zip>
+    <copy file="${dir.build}/common.selenium.jar" todir="${zip.dir}"/>
+  </target>
+
+</project>

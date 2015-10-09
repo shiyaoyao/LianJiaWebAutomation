@@ -1,0 +1,111 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Automation Log Viewer</title>
+	<script type="text/javascript" src="log.js"></script>
+	<link rel="stylesheet" type="text/css" href="log.css" />
+</head>
+
+<body onload="load()">
+<div class="logpage">
+<div class="infoBox">
+		<div class="title" id="title"></div>
+		<div class="description">
+		<table cellspacing="2" border="0" class="summary">
+		  <tbody>
+		    <tr>
+		      <td>
+		      	<span class="label">Description: </span>
+		      	<span id="desc"></span>
+		      </td>
+		      <td>
+		      	<span class="label">Status: </span>
+		      	<span id="status"></span>
+		      </td>
+		    </tr>
+		  </tbody>
+		 </table>
+		</div>
+		<div class="details">
+		<table cellspacing="2" border="0" class="summary">
+		  <tbody>
+		     <tr>
+		      <td class="label">Test Client:</td>
+		      <td id="client-name"></td>
+		      <td class="label">Client O/S:</td>
+		      <td id="client-os"></td>
+		      <td class="label">Browser:</td>
+		      <td id="browser-name"></td>
+		    </tr>
+		     <tr>
+		      <td class="label">Automation:</td>
+		      <td style="overflow:hidden;display:block;" id="automation"></td>
+		      <td class="label">WebDriver:</td>
+		      <td style="overflow:hidden;display:block;" id="engine"></td>
+		      <td class="label">Selenium:</td>
+		      <td id="selenium"></td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+</div>
+<br/>
+
+<form name="myform">
+<TABLE cellspacing="0" cellpadding="3" border="0" class="tools">
+<TR>
+<TD style="width:50%"><input type="text" style="width:100%" name="CLASSNAMES" value=""></TD>
+<TD><input type="button" name="FILTER" style="width:20%" value="Filter CALLSTAMP" onclick="filter('CLASSNAMES',2);">(Seperate with ';')</input></TD>
+</TR>
+<TR>
+<TR>
+<TD><input type="text" style="width:100%" name="LOGS" value=""></TD>
+<TD><input type="button" name="FILTER" style="width:20%" value="Filter Logs" onclick="filter('LOGS',1);">(Seperate with ';')</input></TD>
+</TR>
+<TR>
+<TD class="error"><input type="checkbox" id="ERROR" value="ERROR" checked onclick="changeVis('ERROR');"> ERROR</TD>
+<TD class="testplan"><input type="checkbox" id="TESTPLAN" value="TESTPLAN" checked onclick="changeVis('TESTPLAN');"> TESTPLAN</TD>
+</TR>
+<TR>
+<TD class="warn"><input type="checkbox" id="WARN" value="WARN" checked onclick="changeVis('WARN');"> WARN</TD>
+<TD class="result"><input type="checkbox" id="RESULT" value="RESULT" checked onclick="changeVis('RESULT');"> <font color="BlueViolet">RESULT<font></TD>
+</TR>
+<TR>
+<TD class="debug"><input type="checkbox" id="DEBUG" value="DEBUG" checked onclick="changeVis('DEBUG');"> DEBUG</TD>
+<TD class="exception"><input type="checkbox" id="EXCEPTION" value="EXCEPTION" checked onclick="changeVis('EXCEPTION');"> <font color="MAGENTA">EXCEPTION<font></TD>
+</TR>
+<TR>
+<TD class="info"><input type="checkbox" id="INFO" value="INFO" checked onclick="changeVis('INFO');"> INFO</TD>
+<TD class="image"><input type="checkbox" id="IMAGE" value="IMAGE" checked onclick="changeVis('IMAGE');"> IMAGE</TD>
+</TR>
+<TR>
+<TD class="setting"><input type="checkbox" id="SETTING" value="SETTING" checked onclick="changeVis('SETTING');"> SETTING</TD>
+<TD class="callstamp"><input type="checkbox" id="CALLSTAMP" value="CALLSTAMP" checked onclick="changeVis('CALLSTAMP');"> CALLSTAMP</TD>
+</TR>
+
+</TR>
+<TR>
+<TD><input type="checkbox" id="SELECTALL" value="SELECTALL" onclick="selectAll(this);"> SELECT ALL</TD>
+<TD><input type="checkbox" id="TIMESTAMP" value="TIMESTAMP" checked onclick="changeVis('TIMESTAMP');"> TIMESTAMP</TD>
+</TR>
+</TABLE>
+</form>
+
+<table id="logging" cellspacing="0" cellpadding="3" border="0" class="result">
+  <tbody>
+    <tr class="header" id="messageResults">
+      <td width="75px;">Type</td>
+      <td>Message</td>
+      <td>CallStamp</td>
+      <td>TimeStamp</td>
+    </tr>
+ </tbody>
+</table>
+</div>
+
+<script>
+	loadResults();
+	var oRefresh = setInterval(function(){if(checkDone()){clearInterval(oRefresh); refreshVis();}},100);
+</script>
+</body>
+</html>

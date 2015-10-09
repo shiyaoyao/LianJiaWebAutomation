@@ -1,0 +1,110 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Automation Log Viewer</title>
+	<script type="text/javascript" src="log.js"></script>
+	<link rel="stylesheet" type="text/css" href="log.css" />
+</head>
+<div class="logpage">
+<div class="infoBox">
+		<div class="title" style="height: 2em;">
+			<span id="title"></span>
+			<span class="icons">
+				<img id="browserIcon"/>
+				<img id="osIcon"/>
+			</span>
+			<span id="modeDisplay" style="display:none">
+				<span id="mode"></span>
+			</span>
+		</div>
+		<div class="details">
+		<table cellspacing="2" border="0" class="summary">
+		  <tbody>
+		    <tr>
+		      <td class="label">Platform:</td>
+		      <td style="min-width:150px;overflow:hidden;display:block;"  id="platform"></td>
+		      <td class="label">Browser:</td>
+		      <td id="browser"></td>
+		      <td class="label">Target</td>
+		      <td style="min-width:250px;overflow:hidden;display:block;" id="url"></td>
+		    </tr>
+		    <tr>
+		      <td class="label">Start</td>
+		      <td id="startTime"></td>
+		      <td class="label">Status</td>
+		      <td id="status"></td>
+		      <td class="label">Run</td>
+		      <td id="elapsedTime"></td>
+		    </tr>
+		    <tr>		     
+		      <td class="label">Desc</td>
+		      <td id="description"></td>
+		    </tr>
+		  </tbody>
+		</table>
+		</div>
+</div>
+<br/>
+<h4>Info</h4>
+<table cellspacing="0" cellpadding="3" border="0" class="result" style="" id="suiteTable">
+    <tr class="header" >
+      <td>Total </br>Test Cases</td>
+      <td>Remaining</td>
+      <td>Skipped</td>
+      <td>Passed TC</td>
+      <td>Failed TC</td>
+      <td>TC Passed %</td>
+      
+    </tr>
+    <tr style="text-align:center">
+      <td id="totalTestcases">0</td>
+      <td id="totalTestcasesRemaining">0</td>
+      <td id="totalTestcasesSkipped">0</td> 
+      <td id="totalTestcasesPassed">0</td>
+      <td id="totalTestcasesFailed">0</td>
+      <td id="totalTestcasesPercentage">0%</td>
+     
+    </tr>
+</table>
+
+
+<br/>
+<h4>Tests</h4>
+<table cellspacing="0" cellpadding="3" border="0" class="result" >
+    <tr class="header" id="testResults">
+      <td class="teststatus">Status</td>
+      <td class="testname">Test</td>
+      <td class="testdesc">Description</td>
+      <td class="testtime">Time</td>
+    </tr>
+</table>
+
+<div id="queuedTestTable" style="display:none">
+	<br/>
+	<h4>Queued Tests</h4>
+	<table cellspacing="0" cellpadding="3" border="0" class="result" id="queuedTestsTable">
+	    <tr class="header" id="queuedTests">
+	      <td>Queued Tests</td>
+	    </tr>
+	</table>
+</div>
+
+<div id="retestTable" style="display:none">
+	<br/>
+	<h4>Retests</h4>
+	<table cellspacing="0" cellpadding="3" border="0" class="result">
+    <tr class="header" id="retestResults">
+      <td class="teststatus">Status</td>
+      <td class="testname">Test</td>
+      <td class="testdesc">Description</td>
+      <td class="testtime">Time</td>
+    </tr>
+	</table>
+</div>
+</div>
+<script>
+	/*setTimeout(function(){ window.location.reload() },30000);*/
+	var oSuiteComplete = setTimeout(function(){if(checkTestComplete()){clearTimeout(oSuiteComplete);}},30000);
+	loadResults();	
+</script>
+</html>

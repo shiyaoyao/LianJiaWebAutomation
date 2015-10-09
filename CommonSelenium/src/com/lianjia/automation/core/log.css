@@ -1,0 +1,215 @@
+body, td, div {
+   font-size:12px;
+   font-family:Tahoma, Arial;
+}
+.icons {
+	float:right;	
+}
+.label {
+   font-weight:bold;
+}
+
+span.label {
+   font-weight:bold;
+   padding-right: 5px;
+}
+
+td.label {
+	width: 1px;
+	white-space: nowrap;
+	padding-right: 5px;
+}
+
+span.label {
+	display: block;
+	white-space: no-wrap;
+	padding-right: 5px;
+}
+table.summary{
+   width: 100%;
+}
+
+table.summary td {
+   text-align:left;
+}
+table.tools {
+	width: 100%;
+   border-top: 1px solid #d0d0d0;
+   border-left: 1px solid #d0d0d0;
+}
+
+table.tools td {
+   border-right: 1px solid #d0d0d0;
+   border-bottom: 1px solid #d0d0d0;
+}
+div.logpage {
+	min-width: 800px;
+	max-width: 1200px;
+}
+table.result {
+	width: 100%;
+   border-top: 1px solid #d0d0d0;
+   border-left: 1px solid #d0d0d0;
+}
+
+table.result td {
+   border-right: 1px solid #d0d0d0;
+   border-bottom: 1px solid #d0d0d0;
+}
+
+
+td.text {
+   text-align:center;
+}
+
+td.assert {
+   background:#66FF00;
+   text-align: center;
+}
+td.skipped {
+	text-align: center;
+	background: #C8C6C4;	
+}
+td.failed, td.error, td.exception{
+  color:red;
+}
+td.spr{
+	background-color:#FF4D4D;
+	color:#FFFFF0;
+}
+td.warn{
+  color:#FE7700;
+}
+td.testplan{
+  color:#0086EC;
+}
+td.debug{
+  color:Blue;
+}
+td.exception{
+  color:Magenta;
+}
+td.result{
+  color:Black;
+}
+td.info, td.image {
+  color: #505050;
+}
+td.setting{
+  color:DeepSkyBlue;
+}
+td.callstamp{
+  white-space: nowrap;
+  color:DarkBlue;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+td.passed{
+  color:Green;
+}
+td.failed{
+  color:Red;
+}
+
+td.num {
+   background:#f0f0f0;
+}
+tr.header td {
+   font-weight:bold;
+   background:#f0f0f0;
+   text-align: center;
+}
+
+/*table.results type{
+	width: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+	white-space: nowrap;
+}*/
+h4 {
+   margin-bottom:6px;
+   margin-top:6px;
+   margin-left:6px;
+   font-size:16px;
+   line-height:18px;
+}
+.log{
+   display:none;
+   background:#f0f0f0;
+}
+
+
+.infoBox{
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border: 2px solid rgb(255, 240, 155);
+	width: 100%;
+}
+.infoBox div.title{
+	padding: 4px; 
+	padding-bottom: 0px;
+	background-color: rgb(255, 234, 117); 
+	background-image: none; 
+	font-size: 14px; 
+	font-weight: bold;
+	vertical-align: center;
+}
+
+.infoBox div.description{
+	padding-bottom: 4px; 
+	background-color: rgb(255, 234, 117); 
+	background-image: none; 
+	vertical-align: center;
+}
+
+.infoBox td{
+	vertical-align:top;	
+}
+
+.infoBox .details{
+	padding: 3px; 
+	background-color: rgb(255, 210, 51);
+
+}
+
+td.teststatus{
+	width: 75px;	
+}
+td.testname{
+	width: 350px;
+}
+
+td.testtime{
+	text-align:center;
+	width: 70px;
+}
+td.testdesc{
+	
+}
+
+#mode{
+	border: 1px solid black;
+	color: white;
+	text-shadow: 1px 1px 1px #000000;
+	height: 20px;
+	font-size: 9pt;
+	height: 15px;
+	margin-top:3px;
+	margin-right: 5px;
+	padding: 0px 5px;
+	font-weight: bold;
+	float:right;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.stress{
+	background-color: #990000;	
+}
+.edge{
+	background-color: #FF6600;	
+}
+.data{
+	background-color: #66CCFF;	
+}
+

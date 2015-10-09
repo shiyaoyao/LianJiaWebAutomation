@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="LianJiaWebSelenium" default="junit-report" basedir=".">
+    <!-- =================================================================== -->
+    <!-- 变量设置  -->
+    <!-- =================================================================== -->
+
+    <!-- 源代码src路径 -->
+	<property name="common.selenium.src" value="../CommonSelenium/src" />
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="resources.dir" value="${basedir}/resources" />
+    
+	<!-- 单元测试代码路径 -->
+    <property name="test.path" value="${basedir}/src/com/lianjia/lianjiaweb"/>
+	
+    <!-- 编译文件class路径 -->
+    <property name="build.path" value="${basedir}/bin"/>
+	   
+    <!-- lib包路径 -->
+	<property name="common.selenium.lib" value="../CommonSelenium/lib" />
+	<property name="lianjia.selenium.lib" value="${basedir}/lib" />	
+	
+    <!-- 生成报告junit4.xml路径 -->
+    <property name="report.path" value="report"/>
+        
+    <!-- =================================================================== -->
+    <!-- 设置classpath -->
+    <!-- =================================================================== -->
+    <path id="compile.path">        
+        <fileset dir="${common.selenium.lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+        
+        <pathelement path="${build.path}"/>
+    </path>     
+
+    <!-- 初始化 -->
+    <target name="init">        
+        <mkdir dir="${build.path}"/>
+        <mkdir dir="${report.path}"/>
+    </target>
+    
+    <!-- =================================================================== -->
+    <!-- 清除历史编译class -->
+    <!-- =================================================================== -->
+    <target name="clean" description="clean">        
+        <delete dir="${build.path}"/>
+        <delete dir="${report.path}"/>
+    </target>
+
+    <!-- =================================================================== -->
+    <!-- 编译测试文件，初始化目录 -->
+    <!-- =================================================================== -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"/>
+        <javac srcdir="${common.selenium.src}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"/>
+    	<javac srcdir="${resources.dir}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"/>
+    </target>      
+         
+    <!-- =================================================================== -->
+    <!-- 执行测试案例 -->
+    <!-- =================================================================== -->
+    <target name="junit" depends="compile">                
+        <junit printsummary="true" fork="true">        
+             <formatter type="xml" usefile="true"/>        
+            
+             <classpath refid="compile.path"/>        
+            
+            <batchtest fork="on" todir="${report.path}" haltonfailure="no">
+                <fileset dir="${build.path}">
+                    <include name="com/lianjia/lianjiaweb/authentication/*TestCase.class"/>
+                	<include name="com/lianjia/lianjiaweb/homepage/info/*TestCase.class"/>
+                </fileset>
+            </batchtest>                 
+         </junit>        
+     </target>
+    
+    <target name="junit-report" depends="junit">        
+        <!-- 产生单元测试报表文档 -->
+        <junitreport todir="${report.path}">
+            <fileset dir="${report.path}">
+                <include name="TEST-*.xml" />
+            </fileset>
+            
+            <report format="frames" todir="${report.path}" />
+        </junitreport>
+    </target>  
+    
+</project>

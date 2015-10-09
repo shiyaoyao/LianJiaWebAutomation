@@ -1,0 +1,18 @@
+<!-- ***************************************************************** -->
+<!-- Confidential                                                      -->
+<!-- ***************************************************************** -->
+
+<component name="lianjia-automation/CommonSelenium" 
+           description="common Selenium automation test" 
+           project-type="java" 
+           spec-version="1.0">
+
+  <output-group name="dist">
+		<output type="jar" 
+                visibility="public" 
+                platform="all" 
+                location="${env.LWP_COMP_BUILD}/common.selenium.jar" 
+                preferredInstallLocation="lib"/>
+  </output-group>
+
+</component>

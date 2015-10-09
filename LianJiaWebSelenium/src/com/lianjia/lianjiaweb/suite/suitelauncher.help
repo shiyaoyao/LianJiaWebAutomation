@@ -1,0 +1,53 @@
+
+SuiteRunner [-lstc] [testsuite, testcase ...]
+
+DESCRIPTION
+    
+    SuiteRunner will execute a single test suite, OR a series of 
+    enumerated test cases.
+
+    testsuite   A single test suite file name. May include relative 
+                path information to a local test suite file. All test
+                suite files are presumed to be in the subfolder, or java
+                resource, testsuites, and have the extension .suite.
+                SuiteRunner will append these to the argument if they are 
+                not explicitly entered.
+                
+    testcase    One or more space-separated test case class names. 
+                The full class path must be specified:
+                com.lianjia.test.lianjiaweb.authentication.JustForTest
+                SuiteRunner will construct a dynamic test suite from
+                the entered test case classes.
+                
+OPTIONS
+
+    -l, -s      Lists all test suite files found in the testsuites resource
+                and the testsuites subfolder. 
+                
+    -t          Lists all test targets found in the targets resource and the
+                targets subfolder.
+                
+    -c testsuite
+                Lists all the test cases contained in the specified test 
+                suite file. 
+                
+    --help      This file
+    
+USAGE EXAMPLES
+
+    SuiteRunner QuickTest
+
+                o Will execute the test suite QuickTest.suite found in the
+                  current folder.
+                o If the file isn't found, will execute the file
+                  ./testsuites/QuickTest.suite
+                o If that file isn't found, will execute 
+                  testsuites/QuickTest.suite from the Java resources
+                
+    SuiteRunner com.lianjia.test.lianjiaweb.authentication.JustForTest
+        com.lianjia.test.lianjiaweb.bvt0.CityExchangeTestCase
+
+                Will create a dynamic test suite from the three test case
+                classes and execute that suite. Note: class names are 
+                space-separated. Pressing Enter will submit the command.
+

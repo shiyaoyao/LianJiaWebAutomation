@@ -1,0 +1,1 @@
+start /wait /b BrowserFocus.exe %1

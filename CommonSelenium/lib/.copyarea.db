@@ -1,0 +1,14 @@
+ClearCase CopyAreaDB|4
+dwa.02\dwaqe\lwp\lianjia-automation\CommonSelenium\lib
+2
+a
+15:axiom-impl-1.2.10.jar|1|14222299649|1dad3|14fcfd6|c6fe616d56b0492ba308e38bf7e00eb2|0
+1a:commons-httpclient-3.1.jar|1|14222299743|4a769|fdbb336d|dae5480f95884d70a4d185b67cf24eda|0
+f:lc.data.pop.jar|1|1422229a44d|6bff2|b7c3685e|2a8be561bfab4dde874cd1ea2a16221c|0
+1b:com.lianjia.automation.core.jar|1|147a514afe8|55db5|49443e92|e0c49721969d481b91ac3190d3c20fa9|0
+1e:selenium-server-standalone.jar|1|14acd5b9bdd|218a5bc|1e4f0f82|18f779a37b3c41d6afec28a0ff8e63f2|0
+14:axiom-api-1.2.10.jar|1|1422229954f|65e51|6ed23eb5|af6fd76baa0048df90d8d30f6a65938b|0
+9:log4j.jar|1|1422228629d|758fe|f1868ff1|834af7d1bc854f1a95a693b6fbad6b02|0
+9:junit.jar|1|1422228609a|3dce8|f2ba4b2c|833d035a1a5746dd8d5561af36546625|0
+11:sikuli-script.jar|1|1422229893f|cbc4f8|d0f35543|121fbd7fa51740eb8ab4c264d859de89|0
+10:abdera-1.1.2.jar|1|1422229934d|22988c|eca4c5d4|8e950b9e64f74fb795c5f5245681dd25|0

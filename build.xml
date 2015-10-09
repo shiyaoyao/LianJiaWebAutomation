@@ -48,9 +48,9 @@
     <!-- 编译测试文件，初始化目录 -->
     <!-- =================================================================== -->
     <target name="compile" depends="init">
-        <javac srcdir="${src.dir}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"/>
-        <javac srcdir="${common.selenium.src}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"/>
-    	<javac srcdir="${resources.dir}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"/>
+        <javac srcdir="${src.dir}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"  encoding="UTF-8" />
+        <javac srcdir="${common.selenium.src}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"  encoding="UTF-8" />
+    	<javac srcdir="${resources.dir}" destdir="${build.path}"  classpathref="compile.path" includeantruntime="true"  encoding="UTF-8" />
     </target>      
          
     <!-- =================================================================== -->

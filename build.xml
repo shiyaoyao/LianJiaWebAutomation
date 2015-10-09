@@ -5,16 +5,16 @@
     <!-- =================================================================== -->
 
     <!-- 源代码src路径 -->
-	<property name="common.selenium.src" value="../CommonSelenium/src" />
-	<property name="src.dir" value="../LianJiaWebSelenium/src" />
-	<property name="resources.dir" value="../LianJiaWebSelenium/resources" />
+	<property name="common.selenium.src" value="CommonSelenium/src" />
+	<property name="src.dir" value="LianJiaWebSelenium/src" />
+	<property name="resources.dir" value="LianJiaWebSelenium/resources" />
     	
     <!-- 编译文件class路径 -->
     <property name="build.path" value="../bin"/>
 	   
     <!-- lib包路径 -->
-	<property name="common.selenium.lib" value="../CommonSelenium/lib" />
-	<property name="lianjia.selenium.lib" value="../LianJiaWebSelenium/lib" />	
+	<property name="common.selenium.lib" value="CommonSelenium/lib" />
+	<property name="lianjia.selenium.lib" value="LianJiaWebSelenium/lib" />	
 	
     <!-- 生成报告junit4.xml路径 -->
     <property name="report.path" value="report"/>
